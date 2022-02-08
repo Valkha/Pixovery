@@ -217,7 +217,7 @@ section .container2 .subcontainer {
 }
 
 .neon {
-    background-image: url(./assets/images/SERVICES/SVG/neon.svg);
+    background-image: url("./assets/images/SERVICES/SVG/neon.svg");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
