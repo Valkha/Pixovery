@@ -332,28 +332,28 @@ section .container2 .subcontainer {
 }
 
 #illu {
-    background-image: url('/assets/images/SERVICES/SVG/illu.svg');
+    background-image: url("../assets/images/SERVICES/SVG/illu.svg");
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
 }
 
 #idv {
-    background-image: url('/assets/images/SERVICES/SVG/idv.svg');
+    background-image: url("../assets/images/SERVICES/SVG/idv.svg");
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
 }
 
 #web {
-    background-image: url('/assets/images/SERVICES/SVG/web.svg');
+    background-image: url("../assets/images/SERVICES/SVG/web.svg");
     background-repeat: no-repeat;
     background-position: left;
     background-size: contain;
 }
 
 #print {
-    background-image: url('/assets/images/SERVICES/SVG/print.svg');
+    background-image: url("../assets/images/SERVICES/SVG/print.svg");
     background-repeat: no-repeat;
     background-position: left;
     background-size: contain;
@@ -395,35 +395,35 @@ section .container2 .subcontainer {
 }
 
 #n01 {
-    background-image: url('/assets/images/SERVICES/SVG/n01.svg');
+    background-image: url("../assets/images/SERVICES/SVG/n01.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: fixed;
 }
 
 #n02 {
-    background-image: url('/assets/images/SERVICES/SVG/n02.svg');
+    background-image: url("../assets/images/SERVICES/SVG/n02.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: fixed;
 }
 
 #n03 {
-    background-image: url('/assets/images/SERVICES/SVG/n03.svg');
+    background-image: url("/assets/images/SERVICES/SVG/n03.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: fixed;
 }
 
 #n04 {
-    background-image: url('/assets/images/SERVICES/SVG/n04.svg');
+    background-image: url("../assets/images/SERVICES/SVG/n04.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: fixed;
 }
 
 #n05 {
-    background-image: url('/assets/images/SERVICES/SVG/n05.svg');
+    background-image: url("../assets/images/SERVICES/SVG/n05.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: fixed;
@@ -503,7 +503,7 @@ section .container3 {
 /*section "A PROPOS"*/
 
 #infos {
-    background-image: url('../assets/images/A_PROPOS/SVG/fade.svg');
+    background-image: url("../assets/images/A_PROPOS/SVG/fade.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-color: black;
@@ -529,7 +529,7 @@ section .container4 {
 }
 
 .container4 .about_head .title {
-    background-image: url('/assets/images/A_PROPOS/SVG/title.svg');
+    background-image: url("../assets/images/A_PROPOS/SVG/title.svg");
     background-repeat: no-repeat;
     background-position: center;
     width: 75%;
@@ -537,7 +537,7 @@ section .container4 {
 }
 
 .about_head .subtitle {
-    background-image: url('/assets/images/A_PROPOS/SVG/subtitle.svg');
+    background-image: url("../assets/images/A_PROPOS/SVG/subtitle.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -579,7 +579,7 @@ section .container4 {
     top: 5%;
     left: 25%;
     margin: auto;
-    background-image: url('/assets/images/A_PROPOS/SVG/redhanime.svg');
+    background-image: url("../assets/images/A_PROPOS/SVG/redhanime.svg");
     background-repeat: no-repeat;
     background-position: center;
     width: 60%;
@@ -588,7 +588,7 @@ section .container4 {
 }
 
 .sun {
-    background-image: url('/assets/images/A_PROPOS/SVG/sun.svg');
+    background-image: url("../assets/images/A_PROPOS/SVG/sun.svg");
     background-repeat: no-repeat;
     background-position: center;
     width: 70%;
@@ -607,7 +607,7 @@ section .container4 {
 }
 
 section .container5 {
-    background-image: url('/assets/images/CONTACT/SVG/subgrid.svg');
+    background-image: url("../assets/images/CONTACT/SVG/subgrid.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: fixed;
@@ -619,7 +619,7 @@ section .container5 {
 }
 
 .computer {
-    background-image: url('/assets/images/CONTACT/SVG/computer.svg');
+    background-image: url("../assets/images/CONTACT/SVG/computer.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
@@ -665,7 +665,7 @@ section .container5 {
 
 .portrait {
     background-color: black;
-    background-image: url('/assets/images/CONTACT/SVG/portrait.svg');
+    background-image: url("../assets/images/CONTACT/SVG/portrait.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -715,7 +715,7 @@ section .container5 {
 .form {
     width: 65%;
     height: 100%;
-    background-image: url("/assets/images/CONTACT/SVG/form.svg");
+    background-image: url("../assets/images/CONTACT/SVG/form.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
