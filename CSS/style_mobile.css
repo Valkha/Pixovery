@@ -36,7 +36,7 @@ section .container {
 }
 
 .worker {
-    background-image: url(../assets/images/ACCUEIL/SVG/mobile/worker_mobile3.svg);
+    background-image: url("../assets/images/ACCUEIL/SVG/mobile/worker_mobile3.svg");
     background-size: contain;
     background-position: center top;
     background-repeat: no-repeat;
@@ -47,7 +47,7 @@ section .container {
 }
 
 .line {
-    background-image: url(../assets/images/ACCUEIL/SVG/mobile/line_mobile.svg);
+    background-image: url("../assets/images/ACCUEIL/SVG/mobile/line_mobile.svg");
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;
@@ -126,7 +126,7 @@ section .container2 .subcontainer {
 
 .neon {
     order: 0;
-    background-image: url('/assets/images/SERVICES/SVG/neon.svg');
+    background-image: url("../assets/images/SERVICES/SVG/neon.svg");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -147,7 +147,7 @@ section .container2 .subcontainer {
 }
 
 .illustration {
-    background-image: url(../assets/images/SERVICES/SVG/mobile/illustrations_mobile.svg);
+    background-image: url("../assets/images/SERVICES/SVG/mobile/illustrations_mobile.svg");
     position: absolute;
     top: 0;
     left: 0;
@@ -159,7 +159,7 @@ section .container2 .subcontainer {
 }
 
 .idv {
-    background-image: url(../assets/images/SERVICES/SVG/mobile/idv_mobile.svg);
+    background-image: url("../assets/images/SERVICES/SVG/mobile/idv_mobile.svg");
     position: absolute;
     top: 0;
     left: 0;
@@ -179,7 +179,7 @@ section .container2 .subcontainer {
     background-size: cover;
     width: 100%;
     height: 100vh;
-    background-image: url(../assets/images/SERVICES/SVG/mobile/print_mobile.svg);
+    background-image: url("../assets/images/SERVICES/SVG/mobile/print_mobile.svg");
     display: none;
 }
 
@@ -192,7 +192,7 @@ section .container2 .subcontainer {
     background-size: cover;
     width: 100%;
     height: 100vh;
-    background-image: url(../assets/images/SERVICES/SVG/mobile/web_mobile.svg);
+    background-image: url("../assets/images/SERVICES/SVG/mobile/web_mobile.svg");
     display: none;
 }
 
