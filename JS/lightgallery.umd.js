@@ -701,7 +701,7 @@
         addClass: '',
         startClass: 'lg-start-zoom',
         backdropDuration: 300,
-        container: '.container3',
+        container: '',
         startAnimationDuration: 400,
         zoomFromOrigin: true,
         hideBarsDelay: 0,

@@ -20,18 +20,18 @@
         <header>
             <nav>
                 <div class="logo">
-                    <img src="assets/images/logo.png" alt="">
+                    <img src="assets/images/logo.png" alt="logo Pixovery, crayon astronaute">
                 </div>
-                <div class="toggle">
-                    <i class="fas fa-bars" class="ouvrir"></i>
-                    <i class="fas fa-times" class="fermer"></i>
+                <div class="toggle" onclick="toggle_menu()">
+                    <i class="fas fa-bars" id="ouvrir"></i>
+                    <i class="fas fa-times" id="fermer"></i>
                 </div>
                 <ul class="menu">
-                    <li><a class="btn_accueil active" href="#accueil">ACCUEIL</a></li>
-                    <li><a class="btn_services" href="#services">SERVICES</a></li>
-                    <li><a class="btn_portfolio" href="#portfolio">PORTFOLIO</a></li>
-                    <li><a class="btn_infos" href="#infos">A PROPOS</a></li>
-                    <li><a class="btn_contact" href="#contact">CONTACT</a></li>
+                    <li><a class="btn active" href="#accueil">ACCUEIL</a></li>
+                    <li><a class="btn" href="#services">SERVICES</a></li>
+                    <li><a class="btn" href="#portfolio">PORTFOLIO</a></li>
+                    <li><a class="btn" href="#infos">A PROPOS</a></li>
+                    <li><a class="btn" href="#contact">CONTACT</a></li>
                 </ul>
             </nav>
         </header>
@@ -489,14 +489,8 @@
             })
         })
     </script>
-    <script>
-        let toggle = document.querySelector('.toggle');
-        let body = document.querySelector('body');
 
-        toggle.addEventListener('click', function() {
-            body.classList.toggle('open');
-        })
-    </script>
+    <script src="JS/toggle_navbar.js"></script>
 </body>
 
 </html>
