@@ -16,17 +16,17 @@ $mj = new \Mailjet\Client(API_USER, API_LOGIN,true,['version' => 'v3.1']);
                 'Messages' => [
                     [
                         'From' => [
-                            'Email' => $email,
-                            'Name' => "Test"
+                            'Email' => "pixovery@gmail.com",
+                            'Name' => "Demande Pixovery"
                         ],
                         'To' => [
                             [
                                 'Email' => "pixovery@gmail.com",
-                                'Name' => "Test"
+                                'Name' => "Demande Pixovery"
                             ]
                         ],
                         'Subject' => "Demande de renseignement",
-                        'TextPart' => "$email, $message",
+                        'TextPart' => "$names, $email, $message",
                     ]
                 ]
             ];

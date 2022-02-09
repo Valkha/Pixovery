@@ -719,29 +719,83 @@ section .container5 {
 }
 
 .form {
-    width: 100%;
-    height: 100%;
-    background-image: url("../assets/images/CONTACT/SVG/form.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    width: 75%;
+    height: 95%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 3px solid #ff0098;
+    border-radius: 10px;
+}
+
+.form form {
+    width: 100%;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    justify-content: space-betw;
-    align-items: center;
-    width: 100%;
+    margin: auto;
+    width: 90%;
     height: 100%;
 }
 
-.form-group textarea {
+#username input {
+    color: #fff;
+    border: 2px solid #ff0098;
+    background: transparent;
+    width: 100%;
+    padding: 10px;
+}
+
+#username input::placeholder {
+    color: #ff0098;
+}
+
+#usermail input {
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    border: 2px solid #ff0098;
+    background: transparent;
+}
+
+#usermail input::placeholder {
+    color: #ff0098;
+}
+
+#usermsg textarea {
+    border: 2px solid #ff0098;
+    background: transparent;
     width: 100%;
     height: 100%;
+    color: #fff;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+#usermsg textarea::placeholder {
+    color: #ff0098;
+}
+
+.form-group .button {
+    width: 30%;
+    height: 2rem;
+    font-size: 1.3rem;
+    margin: 20px auto;
+    border: 2px solid #ff0098;
+    color: #ff0098;
+    border-radius: 5px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.form-group .button:hover {
+    background: #ff0098;
+    color: #fff;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
 }
 
 @media all and (max-width: 991px) {
