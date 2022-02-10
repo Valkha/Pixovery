@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="CSS/lightgallery-bundle.css">
     <link rel="stylesheet" href="CSS/aos.css" />
     <link rel="stylesheet" href="CSS/style.css" />
-    <link rel="stylesheet" href="CSS/style_mobile.css" media="only screen and (max-width : 991px)" />
+    <link rel="stylesheet" href="CSS/style_mobile.css" media="only screen and (max-width : 575px)" />
     <script src="https://kit.fontawesome.com/60b308914c.js" crossorigin="anonymous"></script>
     <script src="JS/aos.js"></script>
     <title>PIXOVERY - Graphiste/Illustrateur</title>
@@ -38,12 +38,12 @@
         <section id="accueil">
             <div class="container">
                 <div class="landing_titles">
-                    <div class="title_l" data-aos="fade-down" data-aos-delay="500">
+                    <div class="title_1" data-aos="fade-down" data-aos-delay="500">
                         <h1>PIX<span class="altcolor">OVERY</span></h1>
                     </div>
                     <div class="titles_line" data-aos="fade-right" data-aos-delay="400">
                     </div>
-                    <div class="subtitle_l" data-aos="fade-right" data-aos-delay="700">
+                    <div class="subtitle_1" data-aos="fade-right" data-aos-delay="700">
                         <h2>GRAPHISTE/ILLUSTRATEUR</h2>
                     </div>
                 </div>
@@ -93,7 +93,7 @@
                             </div>
                             <div class="content_r">
                                 <div class="list_r">
-                                    <p>visuels réseaux sociaux<br>maquettes site web<br>newsletters/bannières</p>
+                                    <p>visuels réseaux<br>maquettes site web<br>newsletters/banners</p>
                                 </div>
                                 <div class="picto_r" id="web">
 
@@ -419,9 +419,6 @@
                         <div class="form">
                             <form action="contact.php" method="POST">
                                 <div class="form-group">
-                                    <div class="formtop">
-
-                                    </div>
                                     <div id="username">
                                         <input type="text" name="names" placeholder="Nom/Prénom" autocomplete="off" class="form-control" />
                                     </div>
@@ -469,11 +466,10 @@
     </script>
     <script>
         const sections = document.querySelectorAll('section');
-        const navLi = document.querySelectorAll('header nav ul li a');
+        const navLi = document.querySelectorAll('nav ul li a');
 
         window.addEventListener('scroll', () => {
             let current = '';
-
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;

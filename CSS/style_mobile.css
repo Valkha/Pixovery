@@ -64,7 +64,7 @@ section .container {
     transform: translate(0, -120%);
 }
 
-.title_l {
+.title_1 {
     padding-bottom: 0;
     display: flex;
     justify-content: center;
@@ -72,7 +72,7 @@ section .container {
     height: 35%;
 }
 
-.title_l h1 {
+.title_1 h1 {
     font-family: 'Ubuntu', sans-serif;
     color: #891dfc;
     font-size: 3.3rem;
@@ -81,17 +81,18 @@ section .container {
     margin-bottom: 10px;
 }
 
-.title_l h1 .altcolor {
+.title_1 h1 .altcolor {
     color: #fff;
     font-family: 'Ubuntu', sans-serif;
 }
 
-.subtitle_l {
+.subtitle_1 {
     width: 100%;
     justify-content: center;
+    align-items: center;
 }
 
-.subtitle_l h2 {
+.subtitle_1 h2 {
     font-family: 'Press Start 2P', cursive;
     color: #ff0074;
     font-size: 0.8em;
@@ -105,104 +106,97 @@ section .container {
 
 section .container2 {
     width: 100vw;
+    height: 100%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    font-size: 0.2rem;
-}
-
-#services {
-    background: black;
 }
 
 section .container2 .subcontainer {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-    width: 100vw;
     height: 100%;
 }
 
 .neon {
     order: 0;
-    background-image: url("../assets/images/SERVICES/SVG/neon.svg");
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
     width: 100%;
-    height: 100%;
 }
 
 .left {
-    width: 100vw;
+    width: 100%;
     height: 100%;
     order: 1;
 }
 
+.content_l {
+    border-top: 2px solid #15e1d1;
+    height: 100%;
+}
+
 .right {
-    width: 100vw;
+    width: 100%;
     height: 100%;
     order: 2;
 }
 
+.content_r {
+    border-top: 2px solid #15e1d1;
+    height: 100%;
+}
+
 .illustration {
-    background-image: url("../assets/images/SERVICES/SVG/mobile/illustrations_mobile.svg");
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100vh;
+    margin: 1rem 0;
 }
 
 .idv {
-    background-image: url("../assets/images/SERVICES/SVG/mobile/idv_mobile.svg");
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100vh;
+    margin: 1rem 0;
 }
 
 .print {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100vh;
-    background-image: url("../assets/images/SERVICES/SVG/mobile/print_mobile.svg");
-    display: none;
+    margin: 1rem 0;
 }
 
 .web {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100vh;
-    background-image: url("../assets/images/SERVICES/SVG/mobile/web_mobile.svg");
-    display: none;
+    margin: 1rem 0;
 }
 
 .workflow {
     display: none;
 }
 
-.glow,
-.ship {
-    display: none;
+.title_r h3 {
+    font-size: 1rem;
+}
+
+.list_l p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.list_r p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.title_l {
+    font-size: 0.8rem;
+    padding-bottom: 0.5rem;
+}
+
+.title_r {
+    padding-bottom: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.picto_l {
+    height: auto;
+}
+
+.picto_r {
+    height: auto;
 }
 
 
@@ -248,9 +242,6 @@ section .container4 {
 }
 
 .description {
-    position: relative;
-    top: 0;
-    left: 0;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -268,11 +259,11 @@ section .container4 {
 .about_img {
     order: 1;
     width: 50%;
-    top: 5%;
 }
 
 .about_head {
     width: 80%;
+    margin-top: 8vh;
     order: 0;
 }
 
@@ -283,7 +274,7 @@ section .container4 {
 }
 
 .redhanime {
-    top: 0;
+    top: -4%;
 }
 
 
@@ -293,6 +284,8 @@ section .container5 {
     background-size: cover;
     align-items: center;
     background-position: center;
+    width: 95%;
+    margin: auto;
 }
 
 .computer {
