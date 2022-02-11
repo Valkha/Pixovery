@@ -34,7 +34,7 @@ header {
 }
 
 header.sticky {
-    background: #12ecd5;
+    background: black;
     width: 100vw;
 }
 
@@ -62,7 +62,7 @@ header nav {
 header nav img {
     position: relative;
     left: 10px;
-    width: 100%;
+    width: auto;
     height: 100%;
 }
 
@@ -86,7 +86,7 @@ header nav ul li a {
     border-radius: 20px;
     margin: 10px 10px;
     padding: 10px 10px;
-    font-size: 0.7em;
+    font-size: 0.8em;
     font-weight: bolder;
     letter-spacing: 2px;
 }
@@ -114,6 +114,7 @@ section .container {
     width: 100%;
     height: 100vh;
     display: flex;
+    flex-direction: column;
 }
 
 .dream {
@@ -135,9 +136,6 @@ section .container {
     background-position: right;
     width: 40%;
     height: 60%;
-    position: relative;
-    top: 45%;
-    right: 40%;
     z-index: 1;
 }
 
@@ -200,14 +198,14 @@ section .container2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 3rem;
 }
 
 section .container2 .subcontainer {
     display: flex;
     width: 85%;
     height: 58%;
-    position: relative;
-    top: 10%;
+    margin-top: 5rem;
 }
 
 .left {
@@ -365,8 +363,6 @@ section .container2 .subcontainer {
     width: 100%;
     height: 30%;
     display: flex;
-    position: relative;
-    top: 10%;
     justify-content: space-evenly;
 }
 
@@ -468,6 +464,7 @@ section .container3 {
 
 .gallery {
     width: 100%;
+    height: 100%;
     font-size: 0;
     display: flex;
     flex-wrap: wrap;

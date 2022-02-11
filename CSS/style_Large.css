@@ -5,32 +5,42 @@ header nav {
     margin: 0;
 }
 
+.menu li a {
+    font-size: 2.5rem;
+}
+
 .dream {
     display: none;
 }
 
 .section .container {
-    display: block;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 .worker {
     background-position: center;
-    width: 100%;
-    height: 60%;
+    background-size: cover;
+    width: 80%;
+    height: 70%;
+    margin: 50px auto 0 auto;
 }
 
 .landing_titles {
-    width: 100%;
-    transform: translate(30%, 135%);
+    width: 80%;
+    transform: translate(0, 30%);
+    align-items: center;
+    margin: auto;
 }
 
 
 /*Section SERVICES*/
 
-.container2 {
+section .container2 {
     width: 100vw;
+    height: auto;
 }
 
 .subcontainer {
@@ -50,16 +60,27 @@ header nav {
     margin: 1rem auto;
 }
 
+.nm {
+    width: 3rem;
+    height: 3rem;
+}
+
+.desc {
+    width: 60%;
+}
+
 .neon {
     display: none;
 }
 
 .left {
     width: 47%;
+    height: auto;
 }
 
 .right {
-    width: 47%
+    width: 47%;
+    height: auto;
 }
 
 .list_l,
@@ -81,6 +102,12 @@ header nav {
 .picto_l,
 .picto_r {
     height: 100%;
+}
+
+.num_title {
+    font-size: 1.1rem;
+    width: 40%;
+    padding: 1rem 0;
 }
 
 
