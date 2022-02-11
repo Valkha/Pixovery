@@ -133,10 +133,11 @@ section .container {
     background-image: url("../assets/images/ACCUEIL/SVG/worker2.svg");
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: right;
-    width: 40%;
+    background-position: center;
+    width: 50%;
     height: 60%;
     z-index: 1;
+    margin: 17% 0 0 0;
 }
 
 .landing_titles {
