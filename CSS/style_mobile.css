@@ -58,7 +58,6 @@ section .container {
 .landing_titles {
     display: flex;
     align-items: center;
-    justify-content: top;
     width: 100%;
     height: 20vh;
     transform: translate(0, 50%);

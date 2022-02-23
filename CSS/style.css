@@ -119,7 +119,7 @@ section .container {
 
 .dream {
     background-image: url("../assets/images/ACCUEIL/SVG/dream2.svg");
-    background-size: fill;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: left;
     width: 70%;
@@ -481,6 +481,10 @@ section .container3 {
     background: black;
 }
 
+#portfolio h2 {
+    display: none;
+}
+
 .gallery {
     width: 100%;
     height: 100%;
@@ -627,7 +631,10 @@ section .container4 {
     background-image: url("../assets/images/CONTACT/SVG/subgrid.svg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: fixed;
+}
+
+#infos h2 {
+    display: none;
 }
 
 section .container5 {
