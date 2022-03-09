@@ -1,0 +1,51 @@
+/*Section - SERVICES*/
+
+.num {
+    width: 15%;
+}
+
+.num_title {
+    font-size: 0.8rem;
+}
+
+.desc {
+    width: 100%;
+    height: 50%;
+    color: #12ecd5;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.3rem;
+    padding: 15px 0;
+}
+
+.list_r p {
+    font-size: 1rem;
+    line-height: 2.5rem;
+}
+
+.list_l p {
+    font-size: 1.1rem;
+    line-height: 2.5rem;
+}
+
+.nm {
+    width: 50px;
+    height: 50px;
+}
+
+
+/*Section - A PROPOS*/
+
+.description .text {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+
+/*Section - CONTACT*/
+
+.computer {
+    height: 60%;
+}
+
+.screen {}
