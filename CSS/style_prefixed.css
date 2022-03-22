@@ -287,13 +287,33 @@ section .container2 .subcontainer {
 }
 
 .neon {
+    width: 30%;
+    height: 88%;
+    margin-top: 39px;
+}
+
+.neon-cadre {
     background-image: url("../assets/images/SERVICES/SVG/neon.svg");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    width: 30%;
-    height: 88%;
-    margin-top: 39px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.neon-light {
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/images/SERVICES/SVG/redha-neon-light.svg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .right {

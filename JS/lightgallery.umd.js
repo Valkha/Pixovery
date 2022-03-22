@@ -695,7 +695,7 @@
         mode: 'lg-slide',
         easing: 'ease',
         speed: 400,
-        licenseKey: '0000-0000-000-0000',
+        licenseKey: '942A650E-5D2F4282-ABF13356-8AA48495',
         height: '100%',
         width: '100%',
         addClass: '',
@@ -2591,4 +2591,3 @@
     return lightGallery;
 
 })));
-//# sourceMappingURL=lightgallery.umd.js.map

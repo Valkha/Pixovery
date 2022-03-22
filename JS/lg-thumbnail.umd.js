@@ -5,11 +5,12 @@
  * @license GPLv3
  */
 
-(function (global, factory) {
+(function(global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-    typeof define === 'function' && define.amd ? define(factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.lgThumbnail = factory());
-}(this, (function () { 'use strict';
+        typeof define === 'function' && define.amd ? define(factory) :
+        (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.lgThumbnail = factory());
+}(this, (function() {
+    'use strict';
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation.
@@ -30,7 +31,8 @@
         __assign = Object.assign || function __assign(t) {
             for (var s, i = 1, n = arguments.length; i < n; i++) {
                 s = arguments[i];
-                for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+                for (var p in s)
+                    if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
             }
             return t;
         };
@@ -85,7 +87,7 @@
         flipVertical: 'lgFlipVertical',
     };
 
-    var Thumbnail = /** @class */ (function () {
+    var Thumbnail = /** @class */ (function() {
         function Thumbnail(instance, $LG) {
             this.thumbOuterWidth = 0;
             this.thumbTotalWidth = 0;
@@ -96,13 +98,13 @@
             this.$LG = $LG;
             return this;
         }
-        Thumbnail.prototype.init = function () {
+        Thumbnail.prototype.init = function() {
             // extend module default settings with lightGallery core settings
             this.settings = __assign(__assign({}, thumbnailsSettings), this.core.settings);
             this.thumbOuterWidth = 0;
             this.thumbTotalWidth =
                 this.core.galleryItems.length *
-                    (this.settings.thumbWidth + this.settings.thumbMargin);
+                (this.settings.thumbWidth + this.settings.thumbMargin);
             // Thumbnail animation value
             this.translateX = 0;
             this.setAnimateThumbStyles();
@@ -119,24 +121,23 @@
                         this.enableThumbSwipe();
                     }
                     this.thumbClickable = false;
-                }
-                else {
+                } else {
                     this.thumbClickable = true;
                 }
                 this.toggleThumbBar();
                 this.thumbKeyPress();
             }
         };
-        Thumbnail.prototype.build = function () {
+        Thumbnail.prototype.build = function() {
             var _this = this;
             this.setThumbMarkup();
             this.manageActiveClassOnSlideChange();
-            this.$lgThumb.first().on('click.lg touchend.lg', function (e) {
+            this.$lgThumb.first().on('click.lg touchend.lg', function(e) {
                 var $target = _this.$LG(e.target);
                 if (!$target.hasAttribute('data-lg-item-id')) {
                     return;
                 }
-                setTimeout(function () {
+                setTimeout(function() {
                     // In IE9 and bellow touch does not support
                     // Go to slide if browser does not support css transitions
                     if (_this.thumbClickable && !_this.core.lgBusy) {
@@ -145,27 +146,27 @@
                     }
                 }, 50);
             });
-            this.core.LGel.on(lGEvents.beforeSlide + ".thumb", function (event) {
+            this.core.LGel.on(lGEvents.beforeSlide + ".thumb", function(event) {
                 var index = event.detail.index;
                 _this.animateThumb(index);
             });
-            this.core.LGel.on(lGEvents.beforeOpen + ".thumb", function () {
+            this.core.LGel.on(lGEvents.beforeOpen + ".thumb", function() {
                 _this.thumbOuterWidth = _this.core.outer.get().offsetWidth;
             });
-            this.core.LGel.on(lGEvents.updateSlides + ".thumb", function () {
+            this.core.LGel.on(lGEvents.updateSlides + ".thumb", function() {
                 _this.rebuildThumbnails();
             });
-            this.core.LGel.on(lGEvents.containerResize + ".thumb", function () {
+            this.core.LGel.on(lGEvents.containerResize + ".thumb", function() {
                 if (!_this.core.lgOpened)
                     return;
-                setTimeout(function () {
+                setTimeout(function() {
                     _this.thumbOuterWidth = _this.core.outer.get().offsetWidth;
                     _this.animateThumb(_this.core.index);
                     _this.thumbOuterWidth = _this.core.outer.get().offsetWidth;
                 }, 50);
             });
         };
-        Thumbnail.prototype.setThumbMarkup = function () {
+        Thumbnail.prototype.setThumbMarkup = function() {
             var thumbOuterClassNames = 'lg-thumb-outer ';
             if (this.settings.alignThumbnails) {
                 thumbOuterClassNames += "lg-thumb-align-" + this.settings.alignThumbnails;
@@ -174,8 +175,7 @@
             this.core.outer.addClass('lg-has-thumb');
             if (this.settings.appendThumbnailsTo === '.lg-components') {
                 this.core.$lgComponents.append(html);
-            }
-            else {
+            } else {
                 this.core.outer.append(html);
             }
             this.$thumbOuter = this.core.outer.find('.lg-thumb-outer').first();
@@ -189,7 +189,7 @@
             }
             this.setThumbItemHtml(this.core.galleryItems);
         };
-        Thumbnail.prototype.enableThumbDrag = function () {
+        Thumbnail.prototype.enableThumbDrag = function() {
             var _this = this;
             var thumbDragUtils = {
                 cords: {
@@ -207,24 +207,24 @@
             this.core.outer
                 .find('.lg-thumb')
                 .first()
-                .on('mousedown.lg.thumb', function (e) {
-                if (_this.thumbTotalWidth > _this.thumbOuterWidth) {
-                    // execute only on .lg-object
-                    e.preventDefault();
-                    thumbDragUtils.cords.startX = e.pageX;
-                    thumbDragUtils.startTime = new Date();
-                    _this.thumbClickable = false;
-                    isDragging = true;
-                    // ** Fix for webkit cursor issue https://code.google.com/p/chromium/issues/detail?id=26723
-                    _this.core.outer.get().scrollLeft += 1;
-                    _this.core.outer.get().scrollLeft -= 1;
-                    // *
-                    _this.$thumbOuter
-                        .removeClass('lg-grab')
-                        .addClass('lg-grabbing');
-                }
-            });
-            this.$LG(window).on("mousemove.lg.thumb.global" + this.core.lgId, function (e) {
+                .on('mousedown.lg.thumb', function(e) {
+                    if (_this.thumbTotalWidth > _this.thumbOuterWidth) {
+                        // execute only on .lg-object
+                        e.preventDefault();
+                        thumbDragUtils.cords.startX = e.pageX;
+                        thumbDragUtils.startTime = new Date();
+                        _this.thumbClickable = false;
+                        isDragging = true;
+                        // ** Fix for webkit cursor issue https://code.google.com/p/chromium/issues/detail?id=26723
+                        _this.core.outer.get().scrollLeft += 1;
+                        _this.core.outer.get().scrollLeft -= 1;
+                        // *
+                        _this.$thumbOuter
+                            .removeClass('lg-grab')
+                            .addClass('lg-grabbing');
+                    }
+                });
+            this.$LG(window).on("mousemove.lg.thumb.global" + this.core.lgId, function(e) {
                 if (!_this.core.lgOpened)
                     return;
                 if (isDragging) {
@@ -232,13 +232,12 @@
                     thumbDragUtils = _this.onThumbTouchMove(thumbDragUtils);
                 }
             });
-            this.$LG(window).on("mouseup.lg.thumb.global" + this.core.lgId, function () {
+            this.$LG(window).on("mouseup.lg.thumb.global" + this.core.lgId, function() {
                 if (!_this.core.lgOpened)
                     return;
                 if (thumbDragUtils.isMoved) {
                     thumbDragUtils = _this.onThumbTouchEnd(thumbDragUtils);
-                }
-                else {
+                } else {
                     _this.thumbClickable = true;
                 }
                 if (isDragging) {
@@ -247,7 +246,7 @@
                 }
             });
         };
-        Thumbnail.prototype.enableThumbSwipe = function () {
+        Thumbnail.prototype.enableThumbSwipe = function() {
             var _this = this;
             var thumbDragUtils = {
                 cords: {
@@ -260,7 +259,7 @@
                 endTime: new Date(),
                 touchMoveTime: 0,
             };
-            this.$lgThumb.on('touchstart.lg', function (e) {
+            this.$lgThumb.on('touchstart.lg', function(e) {
                 if (_this.thumbTotalWidth > _this.thumbOuterWidth) {
                     e.preventDefault();
                     thumbDragUtils.cords.startX = e.targetTouches[0].pageX;
@@ -268,45 +267,44 @@
                     thumbDragUtils.startTime = new Date();
                 }
             });
-            this.$lgThumb.on('touchmove.lg', function (e) {
+            this.$lgThumb.on('touchmove.lg', function(e) {
                 if (_this.thumbTotalWidth > _this.thumbOuterWidth) {
                     e.preventDefault();
                     thumbDragUtils.cords.endX = e.targetTouches[0].pageX;
                     thumbDragUtils = _this.onThumbTouchMove(thumbDragUtils);
                 }
             });
-            this.$lgThumb.on('touchend.lg', function () {
+            this.$lgThumb.on('touchend.lg', function() {
                 if (thumbDragUtils.isMoved) {
                     thumbDragUtils = _this.onThumbTouchEnd(thumbDragUtils);
-                }
-                else {
+                } else {
                     _this.thumbClickable = true;
                 }
             });
         };
         // Rebuild thumbnails
-        Thumbnail.prototype.rebuildThumbnails = function () {
+        Thumbnail.prototype.rebuildThumbnails = function() {
             var _this = this;
             // Remove transitions
             this.$thumbOuter.addClass('lg-rebuilding-thumbnails');
-            setTimeout(function () {
+            setTimeout(function() {
                 _this.thumbTotalWidth =
                     _this.core.galleryItems.length *
-                        (_this.settings.thumbWidth + _this.settings.thumbMargin);
+                    (_this.settings.thumbWidth + _this.settings.thumbMargin);
                 _this.$lgThumb.css('width', _this.thumbTotalWidth + 'px');
                 _this.$lgThumb.empty();
                 _this.setThumbItemHtml(_this.core.galleryItems);
                 _this.animateThumb(_this.core.index);
             }, 50);
-            setTimeout(function () {
+            setTimeout(function() {
                 _this.$thumbOuter.removeClass('lg-rebuilding-thumbnails');
             }, 200);
         };
         // @ts-check
-        Thumbnail.prototype.setTranslate = function (value) {
+        Thumbnail.prototype.setTranslate = function(value) {
             this.$lgThumb.css('transform', 'translate3d(-' + value + 'px, 0px, 0px)');
         };
-        Thumbnail.prototype.getPossibleTransformX = function (left) {
+        Thumbnail.prototype.getPossibleTransformX = function(left) {
             if (left > this.thumbTotalWidth - this.thumbOuterWidth) {
                 left = this.thumbTotalWidth - this.thumbOuterWidth;
             }
@@ -315,7 +313,7 @@
             }
             return left;
         };
-        Thumbnail.prototype.animateThumb = function (index) {
+        Thumbnail.prototype.animateThumb = function(index) {
             this.$lgThumb.css('transition-duration', this.core.settings.speed + 'ms');
             if (this.settings.animateThumb) {
                 var position = 0;
@@ -332,8 +330,8 @@
                 }
                 this.translateX =
                     (this.settings.thumbWidth + this.settings.thumbMargin) * index -
-                        1 -
-                        position;
+                    1 -
+                    position;
                 if (this.translateX > this.thumbTotalWidth - this.thumbOuterWidth) {
                     this.translateX = this.thumbTotalWidth - this.thumbOuterWidth;
                 }
@@ -343,7 +341,7 @@
                 this.setTranslate(this.translateX);
             }
         };
-        Thumbnail.prototype.onThumbTouchMove = function (thumbDragUtils) {
+        Thumbnail.prototype.onThumbTouchMove = function(thumbDragUtils) {
             thumbDragUtils.newTranslateX = this.translateX;
             thumbDragUtils.isMoved = true;
             thumbDragUtils.touchMoveTime = new Date().valueOf();
@@ -355,7 +353,7 @@
             this.$thumbOuter.addClass('lg-dragging');
             return thumbDragUtils;
         };
-        Thumbnail.prototype.onThumbTouchEnd = function (thumbDragUtils) {
+        Thumbnail.prototype.onThumbTouchEnd = function(thumbDragUtils) {
             thumbDragUtils.isMoved = false;
             thumbDragUtils.endTime = new Date();
             this.$thumbOuter.removeClass('lg-dragging');
@@ -373,13 +371,12 @@
                 }
                 speedX =
                     speedX +
-                        speedX * (Math.abs(distanceXnew) / this.thumbOuterWidth);
+                    speedX * (Math.abs(distanceXnew) / this.thumbOuterWidth);
                 this.$lgThumb.css('transition-duration', Math.min(speedX - 1, 2) + 'settings');
                 distanceXnew = distanceXnew * speedX;
                 this.translateX = this.getPossibleTransformX(this.translateX - distanceXnew);
                 this.setTranslate(this.translateX);
-            }
-            else {
+            } else {
                 this.translateX = thumbDragUtils.newTranslateX;
             }
             if (Math.abs(thumbDragUtils.cords.endX - thumbDragUtils.cords.startX) <
@@ -388,48 +385,46 @@
             }
             return thumbDragUtils;
         };
-        Thumbnail.prototype.getThumbHtml = function (thumb, index) {
+        Thumbnail.prototype.getThumbHtml = function(thumb, index) {
             var slideVideoInfo = this.core.galleryItems[index].__slideVideoInfo || {};
             var thumbImg;
             if (slideVideoInfo.youtube) {
                 if (this.settings.loadYouTubeThumbnail) {
                     thumbImg =
                         '//img.youtube.com/vi/' +
-                            slideVideoInfo.youtube[1] +
-                            '/' +
-                            this.settings.youTubeThumbSize +
-                            '.jpg';
-                }
-                else {
+                        slideVideoInfo.youtube[1] +
+                        '/' +
+                        this.settings.youTubeThumbSize +
+                        '.jpg';
+                } else {
                     thumbImg = thumb;
                 }
-            }
-            else {
+            } else {
                 thumbImg = thumb;
             }
             return "<div data-lg-item-id=\"" + index + "\" class=\"lg-thumb-item " + (index === this.core.index ? ' active' : '') + "\" \n        style=\"width:" + this.settings.thumbWidth + "px; height: " + this.settings.thumbHeight + ";\n            margin-right: " + this.settings.thumbMargin + "px;\">\n            <img data-lg-item-id=\"" + index + "\" src=\"" + thumbImg + "\" />\n        </div>";
         };
-        Thumbnail.prototype.getThumbItemHtml = function (items) {
+        Thumbnail.prototype.getThumbItemHtml = function(items) {
             var thumbList = '';
             for (var i = 0; i < items.length; i++) {
                 thumbList += this.getThumbHtml(items[i].thumb, i);
             }
             return thumbList;
         };
-        Thumbnail.prototype.setThumbItemHtml = function (items) {
+        Thumbnail.prototype.setThumbItemHtml = function(items) {
             var thumbList = this.getThumbItemHtml(items);
             this.$lgThumb.html(thumbList);
         };
-        Thumbnail.prototype.setAnimateThumbStyles = function () {
+        Thumbnail.prototype.setAnimateThumbStyles = function() {
             if (this.settings.animateThumb) {
                 this.core.outer.addClass('lg-animate-thumb');
             }
         };
         // Manage thumbnail active calss
-        Thumbnail.prototype.manageActiveClassOnSlideChange = function () {
+        Thumbnail.prototype.manageActiveClassOnSlideChange = function() {
             var _this = this;
             // manage active class for thumbnail
-            this.core.LGel.on(lGEvents.beforeSlide + ".thumb", function (event) {
+            this.core.LGel.on(lGEvents.beforeSlide + ".thumb", function(event) {
                 var $thumb = _this.core.outer.find('.lg-thumb-item');
                 var index = event.detail.index;
                 $thumb.removeClass('active');
@@ -437,7 +432,7 @@
             });
         };
         // Toggle thumbnail bar
-        Thumbnail.prototype.toggleThumbBar = function () {
+        Thumbnail.prototype.toggleThumbBar = function() {
             var _this = this;
             if (this.settings.toggleThumb) {
                 this.core.outer.addClass('lg-can-toggle');
@@ -445,27 +440,26 @@
                 this.core.outer
                     .find('.lg-toggle-thumb')
                     .first()
-                    .on('click.lg', function () {
-                    _this.core.outer.toggleClass('lg-components-open');
-                });
+                    .on('click.lg', function() {
+                        _this.core.outer.toggleClass('lg-components-open');
+                    });
             }
         };
-        Thumbnail.prototype.thumbKeyPress = function () {
+        Thumbnail.prototype.thumbKeyPress = function() {
             var _this = this;
-            this.$LG(window).on("keydown.lg.thumb.global" + this.core.lgId, function (e) {
+            this.$LG(window).on("keydown.lg.thumb.global" + this.core.lgId, function(e) {
                 if (!_this.core.lgOpened || !_this.settings.toggleThumb)
                     return;
                 if (e.keyCode === 38) {
                     e.preventDefault();
                     _this.core.outer.addClass('lg-components-open');
-                }
-                else if (e.keyCode === 40) {
+                } else if (e.keyCode === 40) {
                     e.preventDefault();
                     _this.core.outer.removeClass('lg-components-open');
                 }
             });
         };
-        Thumbnail.prototype.destroy = function () {
+        Thumbnail.prototype.destroy = function() {
             if (this.settings.thumbnail) {
                 this.$LG(window).off(".lg.thumb.global" + this.core.lgId);
                 this.core.LGel.off('.lg.thumb');
@@ -480,4 +474,3 @@
     return Thumbnail;
 
 })));
-//# sourceMappingURL=lg-thumbnail.umd.js.map

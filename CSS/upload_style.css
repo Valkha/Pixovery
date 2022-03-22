@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: black;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.upload_field {
+    width: 400px;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+}
+
+.upload_field h1 {
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+    text-transform: uppercase;
+    font-size: 2.1rem;
+    font-weight: 700;
+}
+
+.upload_field input {
+    width: 100%;
+    padding: 0 50px;
+    height: 40px;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+}
