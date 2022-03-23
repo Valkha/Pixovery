@@ -11,9 +11,23 @@
 
 <body>
     <div class="login-form">
-        <h1>Connexion</h1>
-        <form method="POST" action="login.php">
-            <div class="txt_field">
+    <h1>Connexion</h1>
+    <form method="POST" action="login.php">
+   
+    
+<!-- PHP -->    
+
+<?php
+require_once './vendor/autoload.php';
+
+if(isset($_GET['error'])){
+    echo $_GET['error'];
+}
+?>
+<!-- fin PHP --> 
+
+
+<div class="txt_field">
                 <input type="text" name="username" required placeholder="Identifiant">
             </div>
             <div class="txt_field">
