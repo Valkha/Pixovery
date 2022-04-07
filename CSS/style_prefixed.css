@@ -66,6 +66,8 @@ header nav {
 
 .logo {
     height: 80%;
+    width: auto;
+    margin-left: 1rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -77,10 +79,9 @@ header nav {
     align-items: center;
 }
 
-header nav img {
+.logo img {
     position: relative;
-    left: 10px;
-    width: auto;
+    width: 100%;
     height: 100%;
 }
 
@@ -300,7 +301,7 @@ section .container2 .subcontainer {
     height: auto;
     position: absolute;
     filter: blur(4px);
-    animation: glow 2.5s infinite;
+    animation: glow-perso 2.5s infinite;
 }
 
 .neon-light img {
@@ -445,6 +446,7 @@ section .container2 .subcontainer {
     width: 100%;
     height: auto;
     position: absolute;
+    z-index: 10;
 }
 
 .picto-light {
@@ -452,7 +454,7 @@ section .container2 .subcontainer {
     height: auto;
     position: absolute;
     filter: blur(4px);
-    animation: glow 2.5s infinite;
+    animation: glow-picto 2.5s infinite;
     /*animation: glow 3s infinite;*/
 }
 
@@ -583,27 +585,51 @@ section .container2 .subcontainer {
     font-weight: 500;
 }
 
-@-webkit-keyframes glow {
+@-webkit-keyframes glow-perso {
     from {
         opacity: 0.2;
     }
     50% {
-        opacity: 0.8;
+        opacity: 0.5;
     }
     to {
         opacity: 0.1;
     }
 }
 
-@keyframes glow {
+@keyframes glow-perso {
     from {
         opacity: 0.2;
     }
     50% {
-        opacity: 0.8;
+        opacity: 0.5;
     }
     to {
         opacity: 0.1;
+    }
+}
+
+@-webkit-keyframes glow-picto {
+    from {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.2;
+    }
+}
+
+@keyframes glow-picto {
+    from {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.2;
     }
 }
 
