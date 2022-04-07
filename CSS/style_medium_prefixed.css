@@ -13,10 +13,6 @@ header nav {
     font-size: 2rem;
 }
 
-.dream {
-    display: none;
-}
-
 .section .container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -33,12 +29,17 @@ header nav {
     justify-content: center;
 }
 
+#accueil .container {
+    background-image: none;
+}
+
 .worker {
     background-position: center;
     background-size: cover;
-    width: 80%;
-    height: 90%;
+    width: 90%;
+    height: 75%;
     margin: 50px auto 0 auto;
+    display: block;
 }
 
 .landing_titles {
