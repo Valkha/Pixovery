@@ -144,26 +144,32 @@ section .container4 {
 }
 
 .about_head {
+    width: 100%;
     height: 10%;
-    margin: 8% auto 8% auto;
+    margin: 0;
 }
 
 .description {
-    width: 70%;
+    width: 100%;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+    align-items: center;
+}
+
+.description .texts {
+    margin-top: rem;
 }
 
 .description .text {
     font-size: 0.9rem;
-    line-height: 1.5rem;
-    margin: 0 0 0 15%;
+    line-height: 1rem;
+    margin: 0 0 0 0;
 }
 
 .redhanime {
-    width: 80%;
-    left: 10%;
+    width: 50%;
+    height: 100%;
 }
 
 .sun {
